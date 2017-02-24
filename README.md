@@ -18,8 +18,8 @@ It's biggest highlights are:
 ## Part 1: Setting up Express
 
 1. In the homework directory: `mkdir express-blog`
-21. `touch app.js`
 2. `cd express-blog`
+3. `touch app.js`
 3. `npm init` (Hit enter to accept the defaults and see the new [package.json](https://docs.npmjs.com/cli/init) file
 4. `npm install express --save` (The `--save` option adds the module as a dependency in your package.json file. This allows anyone looking at your app (i.e. a dev team member) to be able to see what your app is "made of" and if they clone your app and run `npm i` all dependencies will be installed. This is similar to a gem but you can see it!)
 
@@ -29,7 +29,7 @@ Take a look at the package.json file. Express should be included as a dependency
 
 ```json
 "dependencies": {
-  "express": "^4.14.0"
+  "express": "^4.14.1"
 }
 ```
 
