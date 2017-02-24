@@ -21,7 +21,7 @@ It's biggest highlights are:
 2. `cd express-blog`
 3. `touch app.js`
 3. `npm init` (Hit enter to accept the defaults and see the new [package.json](https://docs.npmjs.com/cli/init) file
-4. `npm install express --save` (The `--save` option adds the module as a dependency in your package.json file. This allows anyone looking at your app (i.e. a dev team member) to be able to see what your app is "made of" and if they clone your app and run `npm i` all dependencies will be installed. This is similar to a gem but you can see it!)
+4. `npm install express --save` (The `--save` option adds the module as a dependency in your package.json file. This allows anyone looking at your app (i.e. a dev team member) to be able to see what your app is "made of" and if they clone your app and run `npm i` all dependencies will be installed.)
 
 
 
@@ -88,7 +88,7 @@ npm uninstall mustache --save
 
 #### Set up Mustache and render the index
 
-Again, we'll use Mustache, at least in the beginning, because the syntax has a gentle learning curve. To change your rendering engine you'll need to edit your app's configuration in `app.js`. We also have to change what happens when a user GETs '/'. Let's get it to render our index template instead of sending 'Hello World'.
+Again, we'll use Mustache, at least in the beginning, because the syntax has a gentle learning curve. To change your rendering engine you'll need to edit your app's configuration in `app.js`. We also have to change what happens when a user GETs '/'. Let's get it to render our index template instead of sending 'homepage'.
 
 ```javascript
 // app.js
@@ -227,7 +227,7 @@ const flinstones = {
 }
 ```
 We can apply it to our html like so:
-```js
+```html
 <h1>{{ title }}</h1>
 <h3>Setting: {{ setting }}</h3>
 <div class="characters">
