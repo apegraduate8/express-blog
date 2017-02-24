@@ -241,7 +241,7 @@ Now, given the packageData object in our app.js file let's fill in our index.htm
 
 After adding some styling, your page could looks something like this:
 
-![Imgur](http://i.imgur.com/jYDktri.png)
+![Imgur](https://i.imgur.com/jYDktri.png)
 
 # BONUSSSSSSSSS
 If you got your templating to work, congrats! Now we are going to shift gears and work with an Express API!
