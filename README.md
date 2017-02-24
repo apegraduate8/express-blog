@@ -77,7 +77,7 @@ Instead of sending some text when we hit our site let's have it serve an index p
 First we need to install the Mustache package with npm:
 
 ```bash
-npm install mustache-express mustache --save
+npm install mustache-express --save
 ```
 
 > Note: You can uninstall from a project with:*
