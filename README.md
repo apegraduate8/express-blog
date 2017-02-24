@@ -100,7 +100,7 @@ const mustacheExpress = require('mustache-express');
 app.engine('html', mustacheExpress());
 app.set('view engine', 'html');
 app.set('views', __dirname + '/views');
-app.use("/public", express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/public'));
 
 
 app.get('/', (req, res) => {
