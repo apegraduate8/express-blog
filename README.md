@@ -58,7 +58,7 @@ Navigate to `http://localhost:8080` and you should see something logged to your 
 Let's look at routes and handler callback functions in Express routes:
 
 ```javascript
-app.get('/', function(req, res) {
+app.get('/', (req, res) => {
   res.send('homepage');
 });
 ```
@@ -77,7 +77,7 @@ Instead of sending some text when we hit our site let's have it serve an index p
 First we need to install the Mustache package with npm:
 
 ```bash
-npm install mustache --save
+npm install mustache-express mustache --save
 ```
 
 > Note: You can uninstall from a project with:*
@@ -92,9 +92,9 @@ Again, we'll use Mustache, at least in the beginning, because the syntax has a g
 
 ```javascript
 // app.js
-var express = require('express');
-var app = express();
-var mustacheExpress = require('mustache-express');
+const express = require('express');
+const app = express();
+const mustacheExpress = require('mustache-express');
 
 
 app.engine('html', mustacheExpress());
@@ -103,12 +103,13 @@ app.set('views', __dirname + '/views');
 app.use("/public", express.static(__dirname + '/public'));
 
 
-app.get('/', function(req, res) {
+app.get('/', (req, res) => {
     res.render('index');
 });
 
-app.listen(port);
-console.log('Server started on ' + port);
+app.listen(port, () => {
+  console.log(`Server started on ${port}`);
+});
 ```
 
 #### Creating views in Express
@@ -145,7 +146,7 @@ And add this code to `index.html`:
 Create a new file in the same directory as app.js called data.js. Add the following object to it.
 
 ```js
-var packageData = {
+const packageData = {
 
     title: "Popular NPM Frameworks",
     text: "These are the most popular frameworks",
@@ -190,9 +191,9 @@ Make sure at the bottom of this file to use `module.exports` to send out the ent
 Let's add the following code to our app.js file.
 
 ```javascript
-var packageData = require('./data');
+const packageData = require('./data');
 
-app.get('/', function(req, res) {
+app.get('/', (req, res) => {
   console.log("index");
   console.log(packageData);
   res.send("index", packageData);
@@ -203,7 +204,7 @@ Here, packageData is a required Module from the data.js file. Take a look at thi
 
 For example, given the following object:
 ``` js
-var flinstones = {
+const flinstones = {
   title: "The Flinstones",
   setting: "Bedrock",
   characters: [
