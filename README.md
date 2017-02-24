@@ -38,12 +38,13 @@ Let's start coding in `app.js`:
 ```javascript
 // app.js
 
-var express = require('express');
-var app     = express();
-var port    = process.env.PORT || 8080;
+const express = require('express');
+const app     = express();
+const port    = process.env.PORT || 8080;
 
-app.listen(port);
-console.log('Server started on ' + port);
+app.listen(port, () =>{
+  console.log(`Server started on ${port}`)
+};
 ```
 Let's run:
 ```bash
