@@ -180,7 +180,7 @@ const packageData = {
       {
         name: "PG Promise",
         category: "Promises Interface for PostgeSQL Database",
-        img: "https://securedb.co/wp-content/uploads/2015/07/worlds-most-advanced-open-source-database-securedb-encyrption-as-a-service.gif"
+        img: "https://camo.githubusercontent.com/625902581fcc8949a27ed425941a3c0c48b28a0d/687474703a2f2f73382e706f7374696d672e6f72672f6b3764747565386c782f70675f70726f6d6973652e6a7067"
       }
     ]
 };
