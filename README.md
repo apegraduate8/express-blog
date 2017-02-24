@@ -1,6 +1,6 @@
 # Express! Mustache!
 
-![Imgur](http://i.imgur.com/sXKNOSW.gif)
+![Imgur](https://media.giphy.com/media/UXlE9tMhPaJJC/giphy.gif)
 
 ### Completion:
 Completion is parts 1-3. As always, more is better, healthy living is Express.
@@ -18,10 +18,10 @@ It's biggest highlights are:
 ## Part 1: Setting up Express
 
 1. In the homework directory: `mkdir express-blog`
-21. `touch app.js`
 2. `cd express-blog`
+3. `touch app.js`
 3. `npm init` (Hit enter to accept the defaults and see the new [package.json](https://docs.npmjs.com/cli/init) file
-4. `npm install express --save` (The `--save` option adds the module as a dependency in your package.json file. This allows anyone looking at your app (i.e. a dev team member) to be able to see what your app is "made of" and if they clone your app and run `npm i` all dependencies will be installed. This is similar to a gem but you can see it!)
+4. `npm install express --save` (The `--save` option adds the module as a dependency in your package.json file. This allows anyone looking at your app (i.e. a dev team member) to be able to see what your app is "made of" and if they clone your app and run `npm i` all dependencies will be installed.)
 
 
 
@@ -29,7 +29,7 @@ Take a look at the package.json file. Express should be included as a dependency
 
 ```json
 "dependencies": {
-  "express": "^4.14.0"
+  "express": "^4.14.1"
 }
 ```
 
@@ -38,12 +38,13 @@ Let's start coding in `app.js`:
 ```javascript
 // app.js
 
-var express = require('express');
-var app     = express();
-var port    = process.env.PORT || 8080;
+const express = require('express');
+const app     = express();
+const port    = process.env.PORT || 8080;
 
-app.listen(port);
-console.log('Server started on ' + port);
+app.listen(port, () => {
+  console.log(`Server started on ${port}`)
+});
 ```
 Let's run:
 ```bash
@@ -57,7 +58,7 @@ Navigate to `http://localhost:8080` and you should see something logged to your 
 Let's look at routes and handler callback functions in Express routes:
 
 ```javascript
-app.get('/', function(req, res) {
+app.get('/', (req, res) => {
   res.send('homepage');
 });
 ```
@@ -76,7 +77,7 @@ Instead of sending some text when we hit our site let's have it serve an index p
 First we need to install the Mustache package with npm:
 
 ```bash
-npm install mustache --save
+npm install mustache-express mustache --save
 ```
 
 > Note: You can uninstall from a project with:*
@@ -87,13 +88,13 @@ npm uninstall mustache --save
 
 #### Set up Mustache and render the index
 
-Again, we'll use Mustache, at least in the beginning, because the syntax has a gentle learning curve. To change your rendering engine you'll need to edit your app's configuration in `app.js`. We also have to change what happens when a user GETs '/'. Let's get it to render our index template instead of sending 'Hello World'.
+Again, we'll use Mustache, at least in the beginning, because the syntax has a gentle learning curve. To change your rendering engine you'll need to edit your app's configuration in `app.js`. We also have to change what happens when a user GETs '/'. Let's get it to render our index template instead of sending 'homepage'.
 
 ```javascript
 // app.js
-var express = require('express');
-var app = express();
-var mustacheExpress = require('mustache-express');
+const express = require('express');
+const app = express();
+const mustacheExpress = require('mustache-express');
 
 
 app.engine('html', mustacheExpress());
@@ -102,12 +103,13 @@ app.set('views', __dirname + '/views');
 app.use("/public", express.static(__dirname + '/public'));
 
 
-app.get('/', function(req, res) {
+app.get('/', (req, res) => {
     res.render('index');
 });
 
-app.listen(port);
-console.log('Server started on ' + port);
+app.listen(port, () => {
+  console.log(`Server started on ${port}`);
+});
 ```
 
 #### Creating views in Express
@@ -144,7 +146,7 @@ And add this code to `index.html`:
 Create a new file in the same directory as app.js called data.js. Add the following object to it.
 
 ```js
-var packageData = {
+const packageData = {
 
     title: "Popular NPM Frameworks",
     text: "These are the most popular frameworks",
@@ -189,9 +191,9 @@ Make sure at the bottom of this file to use `module.exports` to send out the ent
 Let's add the following code to our app.js file.
 
 ```javascript
-var packageData = require('./data');
+const packageData = require('./data');
 
-app.get('/', function(req, res) {
+app.get('/', (req, res) => {
   console.log("index");
   console.log(packageData);
   res.send("index", packageData);
@@ -202,7 +204,7 @@ Here, packageData is a required Module from the data.js file. Take a look at thi
 
 For example, given the following object:
 ``` js
-var flinstones = {
+const flinstones = {
   title: "The Flinstones",
   setting: "Bedrock",
   characters: [
@@ -225,7 +227,7 @@ var flinstones = {
 }
 ```
 We can apply it to our html like so:
-```js
+```html
 <h1>{{ title }}</h1>
 <h3>Setting: {{ setting }}</h3>
 <div class="characters">
@@ -239,7 +241,7 @@ Now, given the packageData object in our app.js file let's fill in our index.htm
 
 After adding some styling, your page could looks something like this:
 
-![Imgur](http://i.imgur.com/jYDktri.png)
+![Imgur](https://i.imgur.com/jYDktri.png)
 
 # BONUSSSSSSSSS
 If you got your templating to work, congrats! Now we are going to shift gears and work with an Express API!
