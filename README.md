@@ -1,6 +1,6 @@
 # Express! Mustache!
 
-![Imgur](https://media.giphy.com/media/UXlE9tMhPaJJC/giphy.gif)
+![Imgur](https://im3.ezgif.com/tmp/ezgif-3-2790c1ea50.gif)
 
 ### Completion:
 Completion is parts 1-3. As always, more is better, healthy living is Express.
