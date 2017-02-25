@@ -1,0 +1,40 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2%;
+}
+.top {
+  width: 42%;
+  color: #00acc1;
+  border-radius: 2%;
+  background-color: rgba(7, 152, 169, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.top > h1 {
+    font-size: 2.5rem;
+    -webkit-margin-before: 0.2em;
+    -webkit-margin-after: 0.2em;
+
+}
+.top > h2 {
+    font-size: 2rem;
+
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+img {
+  transition: all 1s;
+}
+
+ .img500 {
+  width: 500px;
+}

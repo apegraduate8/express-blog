@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="/styles.css">
+ <!--  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet"> -->
+ <!--  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
+
+</head>
+<body>
+
+
+  <div class="container">
+    <div class="top">
+       <h1>{{title}}</h1>
+    <h2>{{text}}</h2>
+    </div>
+
+
+    <main>
+      {{#packages}}
+          <h1> {{name}} </h1>
+          <h4> {{category}} </h4>
+          <img src={{img}} alt="">
+      {{/packages}}
+    </main>
+  </div>
+
+  <script type="text/javascript" src="/script.js" charset="utf-8"></script>
+</body>
+</html>
