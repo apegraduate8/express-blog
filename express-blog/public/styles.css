@@ -1,4 +1,5 @@
 .container {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -38,3 +39,23 @@ img {
  .img500 {
   width: 500px;
 }
+
+button {
+  cursor: pointer;
+  padding: 5px 25px;
+  background: #009688;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 0 0 4px rgba(0,0,0, .75);
+  color: #f3f3f3;
+  font-size: 1.1em;
+  margin: 5px;
+}
+
+input[type=text] {
+    width: initial;
+    height: 20px;
+    font-size: 1.5rem;
+    color: #332f2f;
+}
+
