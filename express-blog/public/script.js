@@ -1,5 +1,5 @@
 
-console.log(document.children[0])
+
 jQuery(document).ready(function($) {
 
   let setButtons = () => {
@@ -25,3 +25,5 @@ jQuery(document).ready(function($) {
 
 });
 
+///////  REFERENCE -----
+///// https://stackoverflow.com/questions/2076642/difference-between-id-load-and-ajax
